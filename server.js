@@ -22,7 +22,11 @@ app.get("/proxy", async (req, res) => {
     }
 });
 
+// Optional: Add a default route for testing
+app.get("/", (req, res) => {
+    res.send("Proxy Server is Running");
+});
+
 // Start the Server
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Proxy server running on port ${PORT}`));
-
